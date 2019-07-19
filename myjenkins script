@@ -1,0 +1,28 @@
+node{
+    
+    def mavenHome = tool name:'maven-3.6.1',type:'maven'
+    
+stage('github_pull')    
+{
+    git credentialsId: 'github-jenkins', url: 'https://github.com/sreedhar094/maven-web-application.git'
+}
+stage('maven_build')
+{
+    sh "${mavenHome}/bin/mvn clean package"
+}
+stage('nexus_push')
+{
+    sh "${mavenHome}/bin/mvn clean deploy"
+}
+stage('sonarqube_push')
+{
+    sh "${mavenHome}/bin/mvn deploy sonar:sonar" 
+}
+stage('tomcat_deploy')
+{
+    sh "cp ${WORKSPACE}/target/*.war /opt/apache-tomcat-9.0.20/webapps"
+}
+stage('jecoco')
+{
+    jacoco buildOverBuild: true, deltaBranchCoverage: '50', deltaClassCoverage: '50', deltaComplexityCoverage: '50', deltaInstructionCoverage: '50', deltaLineCoverage: '50', deltaMethodCoverage: '50'}
+}
