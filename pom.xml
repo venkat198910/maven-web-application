@@ -90,12 +90,12 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.233.190.123:8081/repository/sreenadh-maven-release/</url>
+	      <url>http://15.206.80.72:8081/repository/shyam-maven-release/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.233.190.123:8081/repository/sreenadh-maven-snapshot/</url>
+	      <url>http://15.206.80.72:8081/repository/shyam-maven-snapshot/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	
