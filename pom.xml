@@ -93,9 +93,9 @@
 	      <url>http://3.7.46.16:8081/repository/maven-release/</url>
 	    </repository>
 	    <snapshotRepository>
-	      <id>nexus</id>
+	      <id>deployment</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.7.46.16:8081/repository/maven-snapshot1/</url>
+	      <url>http://13.234.116.14:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	
